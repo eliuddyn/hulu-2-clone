@@ -1,29 +1,28 @@
 import requests from "../utils/requests";
-import {useRouter} from 'next/router'
+import { useRouter } from "next/router";
 
 function Nav() {
+  const router = useRouter();
 
-    const router = useRouter();
-    return (
-        <nav className="relative">
-            <div className="flex px-10 sm:px-20 text-2lx whitespace-nowrap 
-            space-x-10 sm:space-x-20 overflow-x-scroll scrollbar-hide">
-                {Object.entries(requests).map(([key, { title, url }]) => (
-                    <h2 
-                    key={key} 
-                    onClick={ () => router.push(`/?genre=${key}`)}
-                    className="last: pr-24 cursor-pointer transition 
-                    duration-100 transform hover:scale-125 
-                    hover:text-white active:text-red-500">
-                    {title}
-                    </h2>
-                ))}
-            </div>
-
-            <div className="absolute top-0 right-0 
-            bg-gradient-to-l from-[#06202A] h-10 a-1/12" />
-        </nav>
-    )
+  return (
+    <nav className="relative">
+      <div className="flex sm:flex-wrap sm:justify-center sm:gap-6 text-lg whitespace-nowrap px-4 overflow-x-scroll scrollbar-hide">
+        {Object.entries(requests).map(([key, { title }]) => (
+          <h2
+            key={title}
+            onClick={() => router.push(`/?genre=${key}`)}
+            className={
+              key == router.query.genre
+                ? "last: pr-12 sm:last:pr-24 cursor-pointer transition duration-100 transform sm:hover:scale-125 text-green-600 sm:text-2xl"
+                : "last: pr-12 sm:last:pr-24 cursor-pointer transition duration-100 transform sm:hover:scale-125 hover:text-white"
+            }
+          >
+            {title} 
+          </h2>
+        ))}
+      </div>
+    </nav>
+  );
 }
 
-export default Nav
+export default Nav;
