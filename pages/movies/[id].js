@@ -75,6 +75,7 @@ const Movie = ({ movie }) => {
               width={1920}
               height={1080}
               priority="true"
+              className="rounded"
             />
           </div>
         </div>
@@ -88,12 +89,12 @@ const Movie = ({ movie }) => {
 
         <div className="w-full flex justify-center">
           <div>
-            <div className="w-28 h-28 sm:w-32 sm:h-32">
+            <div>
               <Image
-                layout="responsive"
+                layout="fixed"
                 src={`${BASE_URL}${movie?.director?.profile_path}`}
-                width={0}
-                height={0}
+                width={140}
+                height={156}
                 priority="true"
                 className="rounded"
               />
@@ -118,19 +119,17 @@ const Movie = ({ movie }) => {
         </h2>
 
         <div className="relative">
-          <div className="flex sm:justify-start gap-6 whitespace-normal overflow-x-auto">
+          <div className="flex sm:justify-start gap-4 whitespace-normal overflow-x-auto">
             {movie?.cast.map((character) => (
               <div key={character.id} className="w-full">
-                <div className="w-28 h-28 sm:w-32 sm:h-32">
                   <Image
-                    layout="responsive"
+                    layout="fixed"
                     src={`${BASE_URL}${character?.profile_path}`}
-                    width={0}
-                    height={0}
+                    width={140}
+                    height={156}
                     priority="true"
                     className="rounded"
                   />
-                </div>
                 <div className="mt-1 text-center">
                   <h3 className="text-green-600">{character.name}</h3>
                   <h2 className="text-white text-sm pb-2">
@@ -274,17 +273,16 @@ const Movie = ({ movie }) => {
             PRODUCCTION COMPANIES
           </h2>
 
-          <div className="flex flex-wrap gap-2 justify-center">
+          <div className="flex flex-wrap gap-4 justify-center">
             {movie.production_companies.map((pCompany) => (
               <div key={pCompany.id}>
-                <div className="bg-gray-100 p-2 sm:m-2 w-44 h-44">
+                <div className="bg-gray-100 p-0.5 rounded">
                   <Image
-                    layout="responsive"
+                    layout="fixed"
                     src={`${BASE_URL}${pCompany?.logo_path}`}
-                    width={0}
-                    height={0}
+                    width={167}
+                    height={50}
                     priority="true"
-                    className="rounded"
                   />
                 </div>
 

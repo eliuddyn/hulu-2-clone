@@ -87,6 +87,7 @@ const Tv = ({ movie }) => {
               width={1920}
               height={1080}
               priority="true"
+              className="rounded"
             />
           </div>
         </div>
@@ -101,12 +102,12 @@ const Tv = ({ movie }) => {
         <div className="w-full flex justify-center gap-5">
           {movie?.created_by.map((creator) => (
             <div key={creator.id}>
-              <div className="w-28 h-28 sm:w-32 sm:h-32">
+              <div>
                 <Image
-                  layout="responsive"
+                  layout="fixed"
                   src={`${BASE_URL}${creator?.profile_path}`}
-                  width={0}
-                  height={0}
+                  width={140}
+                  height={156}
                   priority="true"
                   className="rounded"
                 />
@@ -129,17 +130,15 @@ const Tv = ({ movie }) => {
         <div className="relative">
           <div className="flex gap-6 whitespace-normal overflow-x-auto">
             {movie?.cast.map((character) => (
-              <div key={character.id}>
-                <div className="w-28 h-28 sm:w-32 sm:h-32">
-                  <Image
-                    layout="responsive"
-                    src={`${BASE_URL}${character?.profile_path}`}
-                    width={0}
-                    height={0}
-                    priority="true"
-                    className="rounded"
-                  />
-                </div>
+              <div key={character.id} className="w-full">
+                <Image
+                  layout="fixed"
+                  src={`${BASE_URL}${character?.profile_path}`}
+                  width={140}
+                  height={156}
+                  priority="true"
+                  className="rounded"
+                />
                 <div className="mt-1 text-center">
                   <h3 className="text-green-600">{character.name}</h3>
                   <h2 className="text-white text-sm pb-2">
@@ -162,12 +161,12 @@ const Tv = ({ movie }) => {
           <div className="flex gap-6 whitespace-normal overflow-x-auto">
             {movie?.seasons.map((season) => (
               <div key={season.id}>
-                <div className="w-32 h-32 sm:w-48 sm:h-48">
+                <div className="">
                   <Image
-                    layout="responsive"
+                    layout="fixed"
                     src={`${BASE_URL}${season?.poster_path}`}
-                    width={0}
-                    height={0}
+                    width={140}
+                    height={190}
                     priority="true"
                     className="rounded"
                   />
@@ -342,14 +341,13 @@ const Tv = ({ movie }) => {
           <div className="flex flex-wrap gap-2 justify-center">
             {movie.networks.map((network) => (
               <div key={network.id}>
-                <div className="bg-gray-100 p-2 sm:m-2 w-44 h-44">
+                <div className="bg-gray-100 p-0.5 rounded">
                   <Image
-                    layout="responsive"
+                    layout="fixed"
                     src={`${BASE_URL}${network?.logo_path}`}
-                    width={0}
-                    height={0}
+                    width={167}
+                    height={50}
                     priority="true"
-                    className="rounded"
                   />
                 </div>
 
@@ -373,17 +371,16 @@ const Tv = ({ movie }) => {
             PRODUCCTION COMPANIES
           </h2>
 
-          <div className="flex flex-wrap gap-2 justify-center">
+          <div className="flex flex-wrap gap-4 justify-center">
             {movie.production_companies.map((pCompany) => (
               <div key={pCompany.id}>
-                <div className="bg-gray-100 p-2 sm:m-2 w-44 h-44">
+                <div className="bg-gray-100 p-0.5 rounded">
                   <Image
-                    layout="responsive"
+                    layout="fixed"
                     src={`${BASE_URL}${pCompany?.logo_path}`}
-                    width={0}
-                    height={0}
+                    width={167}
+                    height={50}
                     priority="true"
-                    className="rounded"
                   />
                 </div>
 
