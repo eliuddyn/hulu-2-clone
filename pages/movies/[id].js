@@ -122,14 +122,14 @@ const Movie = ({ movie }) => {
           <div className="flex sm:justify-start gap-4 whitespace-normal overflow-x-auto">
             {movie?.cast.map((character) => (
               <div key={character.id} className="w-full">
-                  <Image
-                    layout="fixed"
-                    src={`${BASE_URL}${character?.profile_path}`}
-                    width={140}
-                    height={156}
-                    priority="true"
-                    className="rounded"
-                  />
+                <Image
+                  layout="fixed"
+                  src={`${BASE_URL}${character?.profile_path}`}
+                  width={140}
+                  height={156}
+                  priority="true"
+                  className="rounded"
+                />
                 <div className="mt-1 text-center">
                   <h3 className="text-green-600">{character.name}</h3>
                   <h2 className="text-white text-sm pb-2">

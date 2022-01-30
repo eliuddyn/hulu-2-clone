@@ -94,32 +94,34 @@ const Tv = ({ movie }) => {
       </section>
 
       {/* Creator */}
-      <section className="w-full px-5 py-2 mx-auto">
-        <h2 className="text-amber-600 font-bold text-xl sm:text-2xl mb-4">
-          {movie?.created_by.length > 1 ? "CREATORS" : "CREATOR"}
-        </h2>
+      {movie.created_by.length > 0 && (
+        <section className="w-full px-5 py-2 mx-auto">
+          <h2 className="text-amber-600 font-bold text-xl sm:text-2xl mb-4">
+            {movie?.created_by.length > 1 ? "CREATORS" : "CREATOR"}
+          </h2>
 
-        <div className="w-full flex justify-center gap-5">
-          {movie?.created_by.map((creator) => (
-            <div key={creator.id}>
-              <div>
-                <Image
-                  layout="fixed"
-                  src={`${BASE_URL}${creator?.profile_path}`}
-                  width={140}
-                  height={156}
-                  priority="true"
-                  className="rounded"
-                />
-              </div>
+          <div className="w-full flex justify-center gap-5">
+            {movie?.created_by.map((creator) => (
+              <div key={creator.id}>
+                <div>
+                  <Image
+                    layout="fixed"
+                    src={`${BASE_URL}${creator?.profile_path}`}
+                    width={140}
+                    height={156}
+                    priority="true"
+                    className="rounded"
+                  />
+                </div>
 
-              <div className="mt-1 text-center">
-                <h3 className="text-green-600 sm:text-lg">{creator?.name}</h3>
+                <div className="mt-1 text-center">
+                  <h3 className="text-green-600 sm:text-lg">{creator?.name}</h3>
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
-      </section>
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* Cast */}
       <section className="w-full px-5 py-4 mx-auto">
