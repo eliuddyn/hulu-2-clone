@@ -19,8 +19,8 @@ function Footer() {
           <p className="text-lg text-green-600 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-white sm:py-2 sm:mt-0 mt-4">
             © {date.getFullYear()} —
             <a
-              href="https://twitter.com/Linkyu"
-              className="text-green-600 ml-1"
+              href="https://www.eliuddy.dev"
+              className="text-green-600 hover:text-amber-400 ml-1"
               rel="noopener noreferrer"
               target="_blank"
             >
@@ -34,7 +34,6 @@ function Footer() {
               <svg
                 fill="currentColor"
                 strokeLinejoin="round"
-                strokeLinejoin="round"
                 strokeWidth="2"
                 className="w-8 h-8"
                 viewBox="0 0 24 24"
@@ -47,7 +46,6 @@ function Footer() {
             <a className="ml-3 text-gray-500" href="https://twitter.com/Linkyu" target="_blank">
               <svg
                 fill="currentColor"
-                strokeLinejoin="round"
                 strokeLinejoin="round"
                 strokeWidth="2"
                 className="w-8 h-8"
@@ -63,7 +61,6 @@ function Footer() {
                 fill="none"
                 stroke="currentColor"
                 strokeLinejoin="round"
-                strokeLinejoin="round"
                 strokeWidth="2"
                 className="w-8 h-8"
                 viewBox="0 0 24 24"
@@ -78,7 +75,6 @@ function Footer() {
               <svg
                 fill="currentColor"
                 stroke="currentColor"
-                strokeLinejoin="round"
                 strokeLinejoin="round"
                 strokeWidth="0"
                 className="w-8 h-8"

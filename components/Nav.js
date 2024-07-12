@@ -13,11 +13,11 @@ function Nav() {
             onClick={() => router.push(`/?genre=${key}`)}
             className={
               key == router.query.genre
-                ? "last: pr-12 sm:last:pr-24 cursor-pointer transition duration-100 transform sm:hover:scale-125 text-green-600 sm:text-2xl"
+                ? "last: pr-12 sm:last:pr-24 cursor-pointer transition duration-100 transform sm:hover:scale-125 text-amber-400 sm:text-2xl"
                 : "last: pr-12 sm:last:pr-24 cursor-pointer transition duration-100 transform sm:hover:scale-125 hover:text-white"
             }
           >
-            {title} 
+            {title}
           </h2>
         ))}
       </div>
